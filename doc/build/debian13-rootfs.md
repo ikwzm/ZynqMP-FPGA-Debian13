@@ -4,10 +4,21 @@
 
 [./doc/build/linux-kernel-6.12.27-zynqmp-fpga-generic.md](linux-kernel-6.12.27-zynqmp-fpga-generic.md)
 
+#### Prepare the necessary packages
+
+```console
+shell$ sudo apt install debootstrap
+```
+
+If you are building on a different architecture, use qemu.
+
+```console
+shell$ sudo apt install qemu-user-static binfmt-support
+```
+
 #### Setup parameters 
 
 ```console
-shell$ sudo apt install qemu-user-static debootstrap binfmt-support
 shell$ export targetdir=debian13-rootfs
 shell$ export distro=trixie
 ```
@@ -18,10 +29,15 @@ shell$ export distro=trixie
 shell$ mkdir                                            $PWD/$targetdir
 shell$ sudo chown root                                  $PWD/$targetdir
 shell$ sudo debootstrap --arch=arm64 --foreign $distro  $PWD/$targetdir
-shell$ sudo cp /usr/bin/qemu-aarch64-static             $PWD/$targetdir/usr/bin
 shell$ sudo cp /etc/resolv.conf                         $PWD/$targetdir/etc
 shell$ sudo cp scripts/build-debian13-rootfs-second.sh  $PWD/$targetdir
 shell$ sudo cp debian/linux-image-*.deb                 $PWD/$targetdir
+```
+
+If you are using qemu, add qemu-aarch64-static as well.
+
+```console
+shell$ sudo cp /usr/bin/qemu-aarch64-static $PWD/$targetdir/usr/bin
 ```
 
 If you get an error like the following, debootstrap does not yet support bookworm in your environment.
@@ -251,10 +267,15 @@ debian13-rootfs# dpkg -l > dpkg-list.txt
 
 ```console
 debian13-rootfs# exit
-shell$ sudo rm -f $PWD/$targetdir/usr/bin/qemu-aarch64-static
 shell$ sudo rm -f $PWD/$targetdir/build-debian13-rootfs-second.sh
 shell$ sudo rm -f $PWD/$targetdir/linux-image-*.deb
 shell$ sudo mv    $PWD/$targetdir/dpkg-list.txt files/debian13-dpkg-list.txt
+```
+
+If you used qemu, remove qemu-aarch64-static
+
+```console
+shell$ sudo rm -f $PWD/$targetdir/usr/bin/qemu-aarch64-static
 ```
 
 #### Build debian13-rootfs-vanilla.tgz
