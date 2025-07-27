@@ -88,7 +88,7 @@ debian13-rootfs# apt upgrade -y
 ```console
 debian13-rootfs# apt install -y locales dialog
 debian13-rootfs# dpkg-reconfigure locales
-debian13-rootfs# apt install -y net-tools openssh-server resolvconf sudo less hwinfo tcsh zsh file wget
+debian13-rootfs# apt install -y net-tools openssh-server resolvconf sudo less hwinfo tcsh zsh file wget chrony
 ```
 
 please select "97. en_US.UTF-8 UTF-8" and "2. C.UTF-8"

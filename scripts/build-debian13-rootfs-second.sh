@@ -28,7 +28,7 @@ apt upgrade -y
 
 apt install -y locales dialog
 dpkg-reconfigure locales
-apt install -y net-tools openssh-server resolvconf sudo less hwinfo tcsh zsh file wget
+apt install -y net-tools openssh-server resolvconf sudo less hwinfo tcsh zsh file wget chrony
 
 ##### Setup hostname
 
