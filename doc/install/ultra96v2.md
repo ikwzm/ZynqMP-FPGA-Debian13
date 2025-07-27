@@ -81,8 +81,20 @@ shell# cat <<EOT > /mnt/usb2/etc/network/interfaces.d/wlan0
 
 auto  wlan0
 iface wlan0 inet dhcp
-        wpa-ssid ssssssss
-	wpa-psk  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+EOT
+```
+
+```console
+shell# cat <<EOT > /mnt/usb2/etc/wpa_supplicant/wpa_supplicant.conf
+ctrl_interface=/run/wpa_supplicant
+update_config=1
+
+network={
+	ssid="ssssssss"
+	psk=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+}
 EOT
 ```
 
