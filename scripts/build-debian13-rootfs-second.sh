@@ -7,15 +7,6 @@ export LANG=C
 
 ##### Setup APT
 
-cat <<EOT > /etc/apt/sources.list
-deb     http://ftp.jp.debian.org/debian  trixie           main contrib non-free non-free-firmware
-deb-src http://ftp.jp.debian.org/debian  trixie           main contrib non-free non-free-firmware
-deb     http://ftp.jp.debian.org/debian  trixie-updates   main contrib non-free non-free-firmware
-deb-src http://ftp.jp.debian.org/debian  trixie-updates   main contrib non-free non-free-firmware
-deb     http://security.debian.org       trixie-security  main contrib non-free non-free-firmware
-deb-src http://security.debian.org       trixie-security  main contrib non-free non-free-firmware
-EOT
-
 cat <<EOT > /etc/apt/apt.conf.d/71-no-recommends
 APT::Install-Recommends "0";
 APT::Install-Suggests   "0";

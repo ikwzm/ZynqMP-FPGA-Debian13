@@ -32,6 +32,7 @@ shell$ sudo debootstrap --arch=arm64 --foreign $distro  $PWD/$targetdir
 shell$ sudo cp /etc/resolv.conf                         $PWD/$targetdir/etc
 shell$ sudo cp scripts/build-debian13-rootfs-second.sh  $PWD/$targetdir
 shell$ sudo cp debian/linux-image-*.deb                 $PWD/$targetdir
+shell$ sudo cp files/debian.sources                     $PWD/$targetdir/etc/apt/sources.list.d/
 ```
 
 If you are using qemu, add qemu-aarch64-static as well.
@@ -75,17 +76,6 @@ debian13-rootfs# /debootstrap/debootstrap --second-stage
 ```
 
 ##### Setup APT
-
-```console
-debian13-rootfs# cat <<EOT > /etc/apt/sources.list
-deb     http://ftp.jp.debian.org/debian  trixie           main contrib non-free non-free-firmware
-deb-src http://ftp.jp.debian.org/debian  trixie           main contrib non-free non-free-firmware
-deb     http://ftp.jp.debian.org/debian  trixie-updates   main contrib non-free non-free-firmware
-deb-src http://ftp.jp.debian.org/debian  trixie-updates   main contrib non-free non-free-firmware
-deb     http://security.debian.org       trixie-security  main contrib non-free non-free-firmware
-deb-src http://security.debian.org       trixie-security  main contrib non-free non-free-firmware
-EOT
-```
 
 ```console
 debian13-rootfs# cat <<EOT > /etc/apt/apt.conf.d/71-no-recommends
