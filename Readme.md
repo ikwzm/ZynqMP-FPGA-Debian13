@@ -41,7 +41,7 @@ This Repository provides a Linux Boot Image(U-boot, Kernel, Debian 13 RootFS) fo
   + Installed ruby ruby-msgpack ruby-serialport
   + Installed python3 python3-numpy msgpack-rpc-python
   + Installed u-boot-tools
-  + Installed Other package list -> [files/debian13-dpkg-list.txt](files/debian12-dpkg-list.txt)
+  + Installed Other package list -> [files/debian13-dpkg-list.txt](files/debian13-dpkg-list.txt)
 * FPGA Device Drivers and Services
   + [fclkcfg    (FPGA Clock Configuration Device Driver)](https://github.com/ikwzm/fclkcfg)
   + [u-dma-buf  (User space mappable DMA Buffer)](https://github.com/ikwzm/udmabuf)
