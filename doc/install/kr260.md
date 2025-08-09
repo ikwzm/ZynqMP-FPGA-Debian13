@@ -5,9 +5,9 @@
 **Note: Downloading the entire repository takes time, so download the source code from https://github.com/ikwzm/ZynqMP-FPGA-Debian13/releases.**
 
 ```console
-shell$ wget https://github.com/ikwzm/ZynqMP-FPGA-Debian13/archive/refs/tags/v1.0.0.tar.gz
-shell$ tar xfz v1.0.0.tar.gz
-shell$ cd ZynqMP-FPGA-Debian13-1.0.0
+shell$ wget https://github.com/ikwzm/ZynqMP-FPGA-Debian13/archive/refs/tags/v0.3.0.tar.gz
+shell$ tar xfz v0.3.0.tar.gz
+shell$ cd ZynqMP-FPGA-Debian13-0.3.0
 ```
 
 ### File Description
