@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.12.27-zynqmp-fpga Kernel Configuration
+# Linux/arm64 6.12.45-zynqmp-fpga Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="aarch64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0"
 CONFIG_CC_IS_GCC=y
@@ -1886,6 +1886,7 @@ CONFIG_ARM_SCMI_POWER_CONTROL=y
 # end of ARM System Control and Management Interface Protocol
 
 # CONFIG_ARM_SCPI_PROTOCOL is not set
+# CONFIG_ARM_SDE_INTERFACE is not set
 # CONFIG_FIRMWARE_MEMMAP is not set
 # CONFIG_FW_CFG_SYSFS is not set
 # CONFIG_SYSFB_SIMPLEFB is not set
@@ -6414,6 +6415,7 @@ CONFIG_VHOST_MENU=y
 # CONFIG_VHOST_NET is not set
 # CONFIG_VHOST_VSOCK is not set
 # CONFIG_VHOST_CROSS_ENDIAN_LEGACY is not set
+CONFIG_VHOST_ENABLE_FORK_OWNER_CONTROL=y
 
 #
 # Microsoft Hyper-V guest support
