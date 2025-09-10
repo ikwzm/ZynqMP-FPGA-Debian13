@@ -1,7 +1,7 @@
 /dts-v1/;
 
 / {
-	compatible = "avnet,ultra96-rev1\0avnet,ultra96\0xlnx,zynqmp-zcu100-revC\0xlnx,zynqmp-zcu100\0xlnx,zynqmp";
+	compatible = "avnet,ultra96-rev1", "avnet,ultra96", "xlnx,zynqmp-zcu100-revC", "xlnx,zynqmp-zcu100", "xlnx,zynqmp";
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
 	model = "Avnet Ultra96 Rev1";
@@ -152,7 +152,7 @@
 			bootph-all;
 			compatible = "xlnx,zynqmp-ipi-dest-mailbox";
 			reg = <0x00 0xff9905c0 0x00 0x20 0x00 0xff9905e0 0x00 0x20 0x00 0xff990e80 0x00 0x20 0x00 0xff990ea0 0x00 0x20>;
-			reg-names = "local_request_region\0local_response_region\0remote_request_region\0remote_response_region";
+			reg-names = "local_request_region", "local_response_region", "remote_request_region", "remote_response_region";
 			#mbox-cells = <0x01>;
 			xlnx,ipi-id = <0x04>;
 			phandle = <0x0a>;
@@ -199,7 +199,7 @@
 				interrupt-parent = <0x05>;
 				interrupts = <0x00 0x23 0x04>;
 				mboxes = <0x0a 0x00 0x0a 0x01>;
-				mbox-names = "tx\0rx";
+				mbox-names = "tx", "rx";
 				phandle = <0x34>;
 			};
 
@@ -344,12 +344,12 @@
 					phandle = <0x19>;
 
 					mux {
-						groups = "gpio0_4_grp\0gpio0_5_grp";
+						groups = "gpio0_4_grp", "gpio0_5_grp";
 						function = "gpio0";
 					};
 
 					conf {
-						groups = "gpio0_4_grp\0gpio0_5_grp";
+						groups = "gpio0_4_grp", "gpio0_5_grp";
 						slew-rate = <0x01>;
 						power-source = <0x01>;
 					};
@@ -516,14 +516,14 @@
 					};
 
 					conf-rx {
-						pins = "MIO52\0MIO53\0MIO55";
+						pins = "MIO52", "MIO53", "MIO55";
 						bias-high-impedance;
 						drive-strength = <0x0c>;
 						slew-rate = <0x00>;
 					};
 
 					conf-tx {
-						pins = "MIO54\0MIO56\0MIO57\0MIO58\0MIO59\0MIO60\0MIO61\0MIO62\0MIO63";
+						pins = "MIO54", "MIO56", "MIO57", "MIO58", "MIO59", "MIO60", "MIO61", "MIO62", "MIO63";
 						bias-disable;
 						drive-strength = <0x04>;
 						slew-rate = <0x01>;
@@ -544,14 +544,14 @@
 					};
 
 					conf-rx {
-						pins = "MIO64\0MIO65\0MIO67";
+						pins = "MIO64", "MIO65", "MIO67";
 						bias-high-impedance;
 						drive-strength = <0x0c>;
 						slew-rate = <0x00>;
 					};
 
 					conf-tx {
-						pins = "MIO66\0MIO68\0MIO69\0MIO70\0MIO71\0MIO72\0MIO73\0MIO74\0MIO75";
+						pins = "MIO66", "MIO68", "MIO69", "MIO70", "MIO71", "MIO72", "MIO73", "MIO74", "MIO75";
 						bias-disable;
 						drive-strength = <0x04>;
 						slew-rate = <0x01>;
@@ -571,7 +571,7 @@
 				#clock-cells = <0x01>;
 				compatible = "xlnx,zynqmp-clk";
 				clocks = <0x0b 0x0c 0x0d 0x0e 0x0f>;
-				clock-names = "pss_ref_clk\0video_clk\0pss_alt_ref_clk\0aux_ref_clk\0gt_crx_ref_clk";
+				clock-names = "pss_ref_clk", "video_clk", "pss_alt_ref_clk", "aux_ref_clk", "gt_crx_ref_clk";
 				phandle = <0x04>;
 			};
 		};
@@ -696,7 +696,7 @@
 		can@ff060000 {
 			compatible = "xlnx,zynq-can-1.0";
 			status = "disabled";
-			clock-names = "can_clk\0pclk";
+			clock-names = "can_clk", "pclk";
 			reg = <0x00 0xff060000 0x00 0x1000>;
 			interrupts = <0x00 0x17 0x04>;
 			interrupt-parent = <0x05>;
@@ -711,7 +711,7 @@
 		can@ff070000 {
 			compatible = "xlnx,zynq-can-1.0";
 			status = "disabled";
-			clock-names = "can_clk\0pclk";
+			clock-names = "can_clk", "pclk";
 			reg = <0x00 0xff070000 0x00 0x1000>;
 			interrupts = <0x00 0x18 0x04>;
 			interrupt-parent = <0x05>;
@@ -741,7 +741,7 @@
 		};
 
 		debug@fec10000 {
-			compatible = "arm,coresight-cpu-debug\0arm,primecell";
+			compatible = "arm,coresight-cpu-debug", "arm,primecell";
 			reg = <0x00 0xfec10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x06>;
@@ -750,7 +750,7 @@
 		};
 
 		debug@fed10000 {
-			compatible = "arm,coresight-cpu-debug\0arm,primecell";
+			compatible = "arm,coresight-cpu-debug", "arm,primecell";
 			reg = <0x00 0xfed10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x07>;
@@ -759,7 +759,7 @@
 		};
 
 		debug@fee10000 {
-			compatible = "arm,coresight-cpu-debug\0arm,primecell";
+			compatible = "arm,coresight-cpu-debug", "arm,primecell";
 			reg = <0x00 0xfee10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x08>;
@@ -768,7 +768,7 @@
 		};
 
 		debug@fef10000 {
-			compatible = "arm,coresight-cpu-debug\0arm,primecell";
+			compatible = "arm,coresight-cpu-debug", "arm,primecell";
 			reg = <0x00 0xfef10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x09>;
@@ -782,7 +782,7 @@
 			reg = <0x00 0xfd500000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x7c 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -796,7 +796,7 @@
 			reg = <0x00 0xfd510000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x7d 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -810,7 +810,7 @@
 			reg = <0x00 0xfd520000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x7e 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -824,7 +824,7 @@
 			reg = <0x00 0xfd530000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x7f 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -838,7 +838,7 @@
 			reg = <0x00 0xfd540000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x80 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -852,7 +852,7 @@
 			reg = <0x00 0xfd550000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x81 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -866,7 +866,7 @@
 			reg = <0x00 0xfd560000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x82 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -880,7 +880,7 @@
 			reg = <0x00 0xfd570000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x83 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
@@ -900,12 +900,12 @@
 
 		gpu@fd4b0000 {
 			status = "okay";
-			compatible = "xlnx,zynqmp-mali\0arm,mali-400";
+			compatible = "xlnx,zynqmp-mali", "arm,mali-400";
 			reg = <0x00 0xfd4b0000 0x00 0x10000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x84 0x04 0x00 0x84 0x04 0x00 0x84 0x04 0x00 0x84 0x04 0x00 0x84 0x04 0x00 0x84 0x04>;
-			interrupt-names = "gp\0gpmmu\0pp0\0ppmmu0\0pp1\0ppmmu1";
-			clock-names = "bus\0core";
+			interrupt-names = "gp", "gpmmu", "pp0", "ppmmu0", "pp1", "ppmmu1";
+			clock-names = "bus", "core";
 			power-domains = <0x17 0x3a>;
 			clocks = <0x04 0x18 0x04 0x19>;
 			phandle = <0x5c>;
@@ -917,7 +917,7 @@
 			reg = <0x00 0xffa80000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x4d 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -931,7 +931,7 @@
 			reg = <0x00 0xffa90000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x4e 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -945,7 +945,7 @@
 			reg = <0x00 0xffaa0000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x4f 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -959,7 +959,7 @@
 			reg = <0x00 0xffab0000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x50 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -973,7 +973,7 @@
 			reg = <0x00 0xffac0000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x51 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -987,7 +987,7 @@
 			reg = <0x00 0xffad0000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x52 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -1001,7 +1001,7 @@
 			reg = <0x00 0xffae0000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x53 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -1015,7 +1015,7 @@
 			reg = <0x00 0xffaf0000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x54 0x04>;
-			clock-names = "clk_main\0clk_apb";
+			clock-names = "clk_main", "clk_apb";
 			#dma-cells = <0x01>;
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
@@ -1032,10 +1032,10 @@
 		};
 
 		nand-controller@ff100000 {
-			compatible = "xlnx,zynqmp-nand-controller\0arasan,nfc-v3p10";
+			compatible = "xlnx,zynqmp-nand-controller", "arasan,nfc-v3p10";
 			status = "disabled";
 			reg = <0x00 0xff100000 0x00 0x1000>;
-			clock-names = "controller\0bus";
+			clock-names = "controller", "bus";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x0e 0x04>;
 			#address-cells = <0x01>;
@@ -1046,12 +1046,12 @@
 		};
 
 		ethernet@ff0b0000 {
-			compatible = "xlnx,zynqmp-gem\0cdns,gem";
+			compatible = "xlnx,zynqmp-gem", "cdns,gem";
 			status = "disabled";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x39 0x04 0x00 0x39 0x04>;
 			reg = <0x00 0xff0b0000 0x00 0x1000>;
-			clock-names = "pclk\0hclk\0tx_clk\0rx_clk\0tsu_clk";
+			clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
 			power-domains = <0x17 0x1d>;
 			resets = <0x16 0x1d>;
 			reset-names = "gem0_rst";
@@ -1061,12 +1061,12 @@
 		};
 
 		ethernet@ff0c0000 {
-			compatible = "xlnx,zynqmp-gem\0cdns,gem";
+			compatible = "xlnx,zynqmp-gem", "cdns,gem";
 			status = "disabled";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x3b 0x04 0x00 0x3b 0x04>;
 			reg = <0x00 0xff0c0000 0x00 0x1000>;
-			clock-names = "pclk\0hclk\0tx_clk\0rx_clk\0tsu_clk";
+			clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
 			power-domains = <0x17 0x1e>;
 			resets = <0x16 0x1e>;
 			reset-names = "gem1_rst";
@@ -1076,12 +1076,12 @@
 		};
 
 		ethernet@ff0d0000 {
-			compatible = "xlnx,zynqmp-gem\0cdns,gem";
+			compatible = "xlnx,zynqmp-gem", "cdns,gem";
 			status = "disabled";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x3d 0x04 0x00 0x3d 0x04>;
 			reg = <0x00 0xff0d0000 0x00 0x1000>;
-			clock-names = "pclk\0hclk\0tx_clk\0rx_clk\0tsu_clk";
+			clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
 			power-domains = <0x17 0x1f>;
 			resets = <0x16 0x1f>;
 			reset-names = "gem2_rst";
@@ -1091,12 +1091,12 @@
 		};
 
 		ethernet@ff0e0000 {
-			compatible = "xlnx,zynqmp-gem\0cdns,gem";
+			compatible = "xlnx,zynqmp-gem", "cdns,gem";
 			status = "disabled";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x3f 0x04 0x00 0x3f 0x04>;
 			reg = <0x00 0xff0e0000 0x00 0x1000>;
-			clock-names = "pclk\0hclk\0tx_clk\0rx_clk\0tsu_clk";
+			clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
 			power-domains = <0x17 0x20>;
 			resets = <0x16 0x20>;
 			reset-names = "gem3_rst";
@@ -1117,7 +1117,7 @@
 			reg = <0x00 0xff0a0000 0x00 0x1000>;
 			power-domains = <0x17 0x2e>;
 			clocks = <0x04 0x1f>;
-			gpio-line-names = "UART1_TX\0UART1_RX\0UART0_RX\0UART0_TX\0I2C1_SCL\0I2C1_SDA\0SPI1_SCLK\0WLAN_EN\0BT_EN\0SPI1_CS\0SPI1_MISO\0SPI1_MOSI\0I2C_MUX_RESET\0SD0_DAT0\0SD0_DAT1\0SD0_DAT2\0SD0_DAT3\0PS_LED3\0PS_LED2\0PS_LED1\0PS_LED0\0SD0_CMD\0SD0_CLK\0GPIO_PB\0SD0_DETECT\0VBUS_DET\0POWER_INT\0DP_AUX\0DP_HPD\0DP_OE\0DP_AUX_IN\0INA226_ALERT\0PS_FP_PWR_EN\0PL_PWR_EN\0POWER_KILL\0\0GPIO-A\0GPIO-B\0SPI0_SCLK\0GPIO-C\0GPIO-D\0SPI0_CS\0SPI0_MISO\0SPI_MOSI\0GPIO-E\0GPIO-F\0SD1_D0\0SD1_D1\0SD1_D2\0SD1_D3\0SD1_CMD\0SD1_CLK\0USB0_CLK\0USB0_DIR\0USB0_DATA2\0USB0_NXT\0USB0_DATA0\0USB0_DATA1\0USB0_STP\0USB0_DATA3\0USB0_DATA4\0USB0_DATA5\0USB0_DATA6\0USB0_DATA7\0USB1_CLK\0USB1_DIR\0USB1_DATA2\0USB1_NXT\0USB1_DATA0\0USB1_DATA1\0USB1_STP\0USB1_DATA3\0USB1_DATA4\0USB1_DATA5\0USB1_DATA6\0USB_DATA7\0WLAN_IRQ\0PMIC_IRQ\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+			gpio-line-names = "UART1_TX", "UART1_RX", "UART0_RX", "UART0_TX", "I2C1_SCL", "I2C1_SDA", "SPI1_SCLK", "WLAN_EN", "BT_EN", "SPI1_CS", "SPI1_MISO", "SPI1_MOSI", "I2C_MUX_RESET", "SD0_DAT0", "SD0_DAT1", "SD0_DAT2", "SD0_DAT3", "PS_LED3", "PS_LED2", "PS_LED1", "PS_LED0", "SD0_CMD", "SD0_CLK", "GPIO_PB", "SD0_DETECT", "VBUS_DET", "POWER_INT", "DP_AUX", "DP_HPD", "DP_OE", "DP_AUX_IN", "INA226_ALERT", "PS_FP_PWR_EN", "PL_PWR_EN", "POWER_KILL", "", "GPIO-A", "GPIO-B", "SPI0_SCLK", "GPIO-C", "GPIO-D", "SPI0_CS", "SPI0_MISO", "SPI_MOSI", "GPIO-E", "GPIO-F", "SD1_D0", "SD1_D1", "SD1_D2", "SD1_D3", "SD1_CMD", "SD1_CLK", "USB0_CLK", "USB0_DIR", "USB0_DATA2", "USB0_NXT", "USB0_DATA0", "USB0_DATA1", "USB0_STP", "USB0_DATA3", "USB0_DATA4", "USB0_DATA5", "USB0_DATA6", "USB0_DATA7", "USB1_CLK", "USB1_DIR", "USB1_DATA2", "USB1_NXT", "USB1_DATA0", "USB1_DATA1", "USB1_STP", "USB1_DATA3", "USB1_DATA4", "USB1_DATA5", "USB1_DATA6", "USB_DATA7", "WLAN_IRQ", "PMIC_IRQ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "";
 			phandle = <0x1a>;
 		};
 
@@ -1146,7 +1146,7 @@
 			#size-cells = <0x00>;
 			power-domains = <0x17 0x26>;
 			clocks = <0x04 0x3e>;
-			pinctrl-names = "default\0gpio";
+			pinctrl-names = "default", "gpio";
 			pinctrl-0 = <0x18>;
 			pinctrl-1 = <0x19>;
 			scl-gpios = <0x1a 0x04 0x06>;
@@ -1337,10 +1337,10 @@
 			device_type = "pci";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x76 0x04 0x00 0x75 0x04 0x00 0x74 0x04 0x00 0x73 0x04 0x00 0x72 0x04>;
-			interrupt-names = "misc\0dummy\0intx\0msi1\0msi0";
+			interrupt-names = "misc", "dummy", "intx", "msi1", "msi0";
 			msi-parent = <0x1b>;
 			reg = <0x00 0xfd0e0000 0x00 0x1000 0x00 0xfd480000 0x00 0x1000 0x80 0x00 0x00 0x10000000>;
-			reg-names = "breg\0pcireg\0cfg";
+			reg-names = "breg", "pcireg", "cfg";
 			ranges = <0x2000000 0x00 0xe0000000 0x00 0xe0000000 0x00 0x10000000 0x43000000 0x06 0x00 0x06 0x00 0x02 0x00>;
 			bus-range = <0x00 0xff>;
 			interrupt-map-mask = <0x00 0x00 0x00 0x07>;
@@ -1361,7 +1361,7 @@
 			bootph-all;
 			compatible = "xlnx,zynqmp-qspi-1.0";
 			status = "disabled";
-			clock-names = "ref_clk\0pclk";
+			clock-names = "ref_clk", "pclk";
 			interrupts = <0x00 0x0f 0x04>;
 			interrupt-parent = <0x05>;
 			num-cs = <0x01>;
@@ -1377,10 +1377,10 @@
 			compatible = "xlnx,zynqmp-psgtr-v1.1";
 			status = "okay";
 			reg = <0x00 0xfd400000 0x00 0x40000 0x00 0xfd3d0000 0x00 0x1000>;
-			reg-names = "serdes\0siou";
+			reg-names = "serdes", "siou";
 			#phy-cells = <0x04>;
 			clocks = <0x1d 0x1e>;
-			clock-names = "ref0\0ref1";
+			clock-names = "ref0", "ref1";
 			phandle = <0x28>;
 		};
 
@@ -1390,7 +1390,7 @@
 			reg = <0x00 0xffa60000 0x00 0x100>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x1a 0x04 0x00 0x1b 0x04>;
-			interrupt-names = "alarm\0sec";
+			interrupt-names = "alarm", "sec";
 			calibration = <0x7fff>;
 			phandle = <0x7c>;
 		};
@@ -1409,14 +1409,14 @@
 
 		mmc@ff160000 {
 			bootph-all;
-			compatible = "xlnx,zynqmp-8.9a\0arasan,sdhci-8.9a";
+			compatible = "xlnx,zynqmp-8.9a", "arasan,sdhci-8.9a";
 			status = "okay";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x30 0x04>;
 			reg = <0x00 0xff160000 0x00 0x1000>;
-			clock-names = "clk_xin\0clk_ahb";
+			clock-names = "clk_xin", "clk_ahb";
 			#clock-cells = <0x01>;
-			clock-output-names = "clk_out_sd0\0clk_in_sd0";
+			clock-output-names = "clk_out_sd0", "clk_in_sd0";
 			power-domains = <0x17 0x27>;
 			resets = <0x16 0x26>;
 			clocks = <0x04 0x36 0x04 0x1f>;
@@ -1431,14 +1431,14 @@
 
 		mmc@ff170000 {
 			bootph-all;
-			compatible = "xlnx,zynqmp-8.9a\0arasan,sdhci-8.9a";
+			compatible = "xlnx,zynqmp-8.9a", "arasan,sdhci-8.9a";
 			status = "okay";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x31 0x04>;
 			reg = <0x00 0xff170000 0x00 0x1000>;
-			clock-names = "clk_xin\0clk_ahb";
+			clock-names = "clk_xin", "clk_ahb";
 			#clock-cells = <0x01>;
-			clock-output-names = "clk_out_sd1\0clk_in_sd1";
+			clock-output-names = "clk_out_sd1", "clk_in_sd1";
 			power-domains = <0x17 0x28>;
 			resets = <0x16 0x27>;
 			clocks = <0x04 0x37 0x04 0x1f>;
@@ -1484,7 +1484,7 @@
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x13 0x04>;
 			reg = <0x00 0xff040000 0x00 0x1000>;
-			clock-names = "ref_clk\0pclk";
+			clock-names = "ref_clk", "pclk";
 			#address-cells = <0x01>;
 			#size-cells = <0x00>;
 			power-domains = <0x17 0x23>;
@@ -1502,7 +1502,7 @@
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x14 0x04>;
 			reg = <0x00 0xff050000 0x00 0x1000>;
-			clock-names = "ref_clk\0pclk";
+			clock-names = "ref_clk", "pclk";
 			#address-cells = <0x01>;
 			#size-cells = <0x00>;
 			power-domains = <0x17 0x24>;
@@ -1564,12 +1564,12 @@
 
 		serial@ff000000 {
 			bootph-all;
-			compatible = "xlnx,zynqmp-uart\0cdns,uart-r1p12";
+			compatible = "xlnx,zynqmp-uart", "cdns,uart-r1p12";
 			status = "okay";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x15 0x04>;
 			reg = <0x00 0xff000000 0x00 0x1000>;
-			clock-names = "uart_clk\0pclk";
+			clock-names = "uart_clk", "pclk";
 			power-domains = <0x17 0x21>;
 			resets = <0x16 0x22>;
 			clocks = <0x04 0x38 0x04 0x1f>;
@@ -1586,12 +1586,12 @@
 
 		serial@ff010000 {
 			bootph-all;
-			compatible = "xlnx,zynqmp-uart\0cdns,uart-r1p12";
+			compatible = "xlnx,zynqmp-uart", "cdns,uart-r1p12";
 			status = "okay";
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x16 0x04>;
 			reg = <0x00 0xff010000 0x00 0x1000>;
-			clock-names = "uart_clk\0pclk";
+			clock-names = "uart_clk", "pclk";
 			power-domains = <0x17 0x22>;
 			resets = <0x16 0x23>;
 			clocks = <0x04 0x39 0x04 0x1f>;
@@ -1607,10 +1607,10 @@
 			status = "okay";
 			compatible = "xlnx,zynqmp-dwc3";
 			reg = <0x00 0xff9d0000 0x00 0x100>;
-			clock-names = "bus_clk\0ref_clk";
+			clock-names = "bus_clk", "ref_clk";
 			power-domains = <0x17 0x16>;
 			resets = <0x16 0x3b 0x16 0x3d 0x16 0x3f>;
-			reset-names = "usb_crst\0usb_hibrst\0usb_apbrst";
+			reset-names = "usb_crst", "usb_hibrst", "usb_apbrst";
 			ranges;
 			clocks = <0x04 0x20 0x04 0x22>;
 			assigned-clocks = <0x04 0x20 0x04 0x22>;
@@ -1625,7 +1625,7 @@
 				status = "okay";
 				reg = <0x00 0xfe200000 0x00 0x40000>;
 				interrupt-parent = <0x05>;
-				interrupt-names = "host\0peripheral\0otg\0wakeup";
+				interrupt-names = "host", "peripheral", "otg", "wakeup";
 				interrupts = <0x00 0x41 0x04 0x00 0x41 0x04 0x00 0x45 0x04 0x00 0x4b 0x04>;
 				clock-names = "ref";
 				snps,quirk-frame-length-adjustment = <0x20>;
@@ -1643,10 +1643,10 @@
 			status = "okay";
 			compatible = "xlnx,zynqmp-dwc3";
 			reg = <0x00 0xff9e0000 0x00 0x100>;
-			clock-names = "bus_clk\0ref_clk";
+			clock-names = "bus_clk", "ref_clk";
 			power-domains = <0x17 0x17>;
 			resets = <0x16 0x3c 0x16 0x3e 0x16 0x40>;
-			reset-names = "usb_crst\0usb_hibrst\0usb_apbrst";
+			reset-names = "usb_crst", "usb_hibrst", "usb_apbrst";
 			ranges;
 			clocks = <0x04 0x21 0x04 0x22>;
 			assigned-clocks = <0x04 0x21 0x04 0x22>;
@@ -1662,7 +1662,7 @@
 				status = "okay";
 				reg = <0x00 0xfe300000 0x00 0x40000>;
 				interrupt-parent = <0x05>;
-				interrupt-names = "host\0peripheral\0otg\0wakeup";
+				interrupt-names = "host", "peripheral", "otg", "wakeup";
 				interrupts = <0x00 0x46 0x04 0x00 0x46 0x04 0x00 0x4a 0x04 0x00 0x4c 0x04>;
 				clock-names = "ref";
 				snps,quirk-frame-length-adjustment = <0x20>;
@@ -1743,17 +1743,17 @@
 			compatible = "xlnx,zynqmp-dpsub-1.7";
 			status = "okay";
 			reg = <0x00 0xfd4a0000 0x00 0x1000 0x00 0xfd4aa000 0x00 0x1000 0x00 0xfd4ab000 0x00 0x1000 0x00 0xfd4ac000 0x00 0x1000>;
-			reg-names = "dp\0blend\0av_buf\0aud";
+			reg-names = "dp", "blend", "av_buf", "aud";
 			interrupts = <0x00 0x77 0x04>;
 			interrupt-parent = <0x05>;
-			clock-names = "dp_apb_clk\0dp_aud_clk\0dp_vtc_pixel_clk_in";
+			clock-names = "dp_apb_clk", "dp_aud_clk", "dp_vtc_pixel_clk_in";
 			power-domains = <0x17 0x29>;
 			resets = <0x16 0x03>;
-			dma-names = "vid0\0vid1\0vid2\0gfx0\0aud0\0aud1";
+			dma-names = "vid0", "vid1", "vid2", "gfx0", "aud0", "aud1";
 			dmas = <0x2b 0x00 0x2b 0x01 0x2b 0x02 0x2b 0x03 0x2b 0x04 0x2b 0x05>;
 			clocks = <0x04 0x1c 0x04 0x11 0x04 0x10>;
 			assigned-clocks = <0x04 0x12 0x04 0x11 0x04 0x10>;
-			phy-names = "dp-phy0\0dp-phy1";
+			phy-names = "dp-phy0", "dp-phy1";
 			phys = <0x28 0x01 0x06 0x00 0x01 0x28 0x00 0x06 0x01 0x01>;
 			phandle = <0x92>;
 
