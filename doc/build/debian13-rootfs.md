@@ -2,7 +2,7 @@
 
 #### Prepare Linux Kernel Image Debian Package
 
-[./doc/build/linux-kernel-6.12.27-zynqmp-fpga-generic.md](linux-kernel-6.12.27-zynqmp-fpga-generic.md)
+[./doc/build/linux-kernel-6.12.45-zynqmp-fpga-generic.md](linux-kernel-6.12.45-zynqmp-fpga-generic.md)
 
 #### Prepare the necessary packages
 
