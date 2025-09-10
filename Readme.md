@@ -27,8 +27,8 @@ This Repository provides a Linux Boot Image(U-boot, Kernel, Debian 13 RootFS) fo
   + PMU Firmware(Platform Management Unit Firmware)
   + BL31(ARM Trusted Firmware Boot Loader stage 3-1)
   + U-Boot xilinx-v2019.2 (customized)
-* [Linux Kernel Version 6.12.27-zynqmp-fpga-generic](https://github.com/ikwzm/ZynqMP-FPGA-Linux-Kernel-6.12/tree/6.12.27-zynqmp-fpga-generic-3)
-  + [linux-stable 6.12.27](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git//tag/?h=v6.12.27)
+* [Linux Kernel Version 6.12.45-zynqmp-fpga-generic](https://github.com/ikwzm/ZynqMP-FPGA-Linux-Kernel-6.12/tree/6.12.45-zynqmp-fpga-generic-1)
+  + [linux-stable 6.12.45](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git//tag/?h=v6.12.45)
   + Patched equivalent to linux-xlnx v2025.1
   + Enable Device Tree Overlay with Configuration File System
   + Enable FPGA Manager
@@ -54,6 +54,7 @@ For Linux Kernel and Debian11 RootFS, please refer to the respective release tag
 
 | Release  | Released  | Debian Version | Linux Kernel Version           | Release Tag |
 |:---------|:----------|:---------------|:-------------------------------|:------------|
+| v1.0.0   | 2025-9-10 | Debian 13.1    | 6.12.45-zynqmp-fpga-generic-1  | [v1.0.0](https://github.com/ikwzm/ZynqMP-FPGA-Debian13/tree/v1.0.0)
 | v0.3.0   | 2025-8-10 | Debian 13.0    | 6.12.27-zynqmp-fpga-generic-3  | [v0.3.0](https://github.com/ikwzm/ZynqMP-FPGA-Debian13/tree/v0.3.0)
 
 Install
