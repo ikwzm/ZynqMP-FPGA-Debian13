@@ -5,9 +5,9 @@
 **Note: Downloading the entire repository takes time, so download the source code from https://github.com/ikwzm/ZynqMP-FPGA-Debian13/releases.**
 
 ```console
-shell$ wget https://github.com/ikwzm/ZynqMP-FPGA-Debian13/archive/refs/tags/v1.0.0.tar.gz
-shell$ tar xfz v1.0.0.tar.gz
-shell$ cd ZynqMP-FPGA-Debian13-1.0.0
+shell$ wget https://github.com/ikwzm/ZynqMP-FPGA-Debian13/archive/refs/tags/v3.0.0.tar.gz
+shell$ tar xfz v3.0.0.tar.gz
+shell$ cd ZynqMP-FPGA-Debian13-3.0.0
 ```
 
 ### File Description
@@ -16,15 +16,15 @@ shell$ cd ZynqMP-FPGA-Debian13-1.0.0
    + boot/
      - boot.bin                                                 : Stage 1 Boot Loader
      - uEnv.txt                                                 : U-Boot environment variables for linux boot
-     - devicetree-6.12.45-zynqmp-fpga-generic-ultra96.dtb       : Linux Device Tree Blob   
-     - devicetree-6.12.45-zynqmp-fpga-generic-ultra96.dts       : Linux Device Tree Blob   
+     - devicetree-6.12.60-zynqmp-fpga-generic-ultra96.dtb       : Linux Device Tree Blob   
+     - devicetree-6.12.60-zynqmp-fpga-generic-ultra96.dts       : Linux Device Tree Blob   
  * files/
-     - vmlinuz-6.12.45-zynqmp-fpga-generic-1                    : Linux Kernel Image
+     - vmlinuz-6.12.60-zynqmp-fpga-generic-1                    : Linux Kernel Image
  * debian13-rootfs-vanilla.tgz.files/                           : Debian13 Root File System
    + x00 .. x10                                                 : (splited files)
  * debian/
-   - linux-image-6.12.45-zynqmp-fpga-generic_6.12.45-zynqmp-fpga-1_arm64.deb   : Linux Image Package
-   - linux-headers-6.12.45-zynqmp-fpga-generic_6.12.45-zynqmp-fpga-1_arm64.deb : Linux Headers Package
+   - linux-image-6.12.60-zynqmp-fpga-generic_6.12.60-zynqmp-fpga-1_arm64.deb   : Linux Image Package
+   - linux-headers-6.12.60-zynqmp-fpga-generic_6.12.60-zynqmp-fpga-1_arm64.deb : Linux Headers Package
  
 ### Format SD-Card
 
@@ -42,7 +42,7 @@ shell# mount /dev/sdc2 /mnt/usb2
 
 ```console
 shell# cp target/Ultra96/boot/*                                 /mnt/usb1
-shell# gzip -d -c files/vmlinuz-6.12.45-zynqmp-fpga-generic-1 > /mnt/usb1/image-6.12.45-zynqmp-fpga-generic
+shell# gzip -d -c files/vmlinuz-6.12.60-zynqmp-fpga-generic-1 > /mnt/usb1/image-6.12.60-zynqmp-fpga-generic
 ```
 
 #### Make RootFS Partition
