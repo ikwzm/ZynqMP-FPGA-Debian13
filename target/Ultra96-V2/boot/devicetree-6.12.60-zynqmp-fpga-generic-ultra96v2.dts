@@ -745,6 +745,7 @@
 			reg = <0x00 0xfec10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x06>;
+			status = "disabled";
 			clocks = <0x04 0x0c>;
 			phandle = <0x4e>;
 		};
@@ -754,6 +755,7 @@
 			reg = <0x00 0xfed10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x07>;
+			status = "disabled";
 			clocks = <0x04 0x0c>;
 			phandle = <0x4f>;
 		};
@@ -763,6 +765,7 @@
 			reg = <0x00 0xfee10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x08>;
+			status = "disabled";
 			clocks = <0x04 0x0c>;
 			phandle = <0x50>;
 		};
@@ -772,6 +775,7 @@
 			reg = <0x00 0xfef10000 0x00 0x1000>;
 			clock-names = "apb_pclk";
 			cpu = <0x09>;
+			status = "disabled";
 			clocks = <0x04 0x0c>;
 			phandle = <0x51>;
 		};
