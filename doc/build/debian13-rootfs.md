@@ -2,7 +2,7 @@
 
 #### Prepare Linux Kernel Image Debian Package
 
-[./doc/build/linux-kernel-6.12.27-zynqmp-fpga-generic.md](linux-kernel-6.12.27-zynqmp-fpga-generic.md)
+[./doc/build/linux-kernel-6.12.60-zynqmp-fpga-generic.md](linux-kernel-6.12.60-zynqmp-fpga-generic.md)
 
 #### Prepare the necessary packages
 
@@ -179,8 +179,6 @@ EOT
 
 ```console
 debian13-rootfs# mkdir /lib/firmware
-debian11-rootfs# mkdir /lib/firmware/ti-connectivity
-debian11-rootfs# mkdir /lib/firmware/mchp
 ```
 
 ##### Install Development applications
@@ -197,13 +195,19 @@ debian13-rootfs# apt install -y flex bison pkg-config
 debian13-rootfs# apt install -y file dosfstools
 ```
 
-### Install Wireless tools and firmware
+##### Install Wireless tools and firmware
 
 ```console
 debian13-rootfs# apt install -y wireless-tools
 debian13-rootfs# apt install -y wpasupplicant
 debian13-rootfs# apt install -y firmware-realtek
 debian13-rootfs# apt install -y firmware-ralink
+```
+
+###### Install /lib/firmware/ti-connectivity
+
+```console
+debian11-rootfs# mkdir /lib/firmware/ti-connectivity
 ```
 
 Note: If the version of wl18xx-fw-4.bin is 8.9.1.0.0 or later, it will not work, so use 8.9.0.0.90.
@@ -221,10 +225,14 @@ debian13-rootfs# cp ti-bt-firmware/TIInit_11.8.32.bts /lib/firmware/ti-connectiv
 debian13-rootfs# rm -rf ti-bt-firmware
 ```
 
+###### Install /lib/firmware/mchp
+
 ```console
-debian13-rootfs# git clone https://github.com/linux4wilc/firmware  linux4wilc-firmware  
-debian13-rootfs# cp linux4wilc-firmware/*.bin /lib/firmware/mchp
+debian13-rootfs# git clone -b wilc_linux_16_5_1 https://github.com/linux4wilc/firmware  linux4wilc-firmware
+debian13-rootfs# mkdir /lib/firmware/mchp-16.5.1
+debian13-rootfs# cp linux4wilc-firmware/*.bin /lib/firmware/mchp-16.5.1
 debian13-rootfs# rm -rf linux4wilc-firmware  
+debian13-rootfs# ln -s mchp-16.5.1 /lib/firmware/mchp
 ```
 
 ##### Install Other applications
