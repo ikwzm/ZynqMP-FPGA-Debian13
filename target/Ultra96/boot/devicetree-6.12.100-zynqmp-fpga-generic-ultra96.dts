@@ -180,12 +180,6 @@
 
 	firmware {
 
-		optee {
-			compatible = "linaro,optee-tz";
-			method = "smc";
-			phandle = <0x33>;
-		};
-
 		zynqmp-firmware {
 			compatible = "xlnx,zynqmp-firmware";
 			#power-domain-cells = <0x01>;
@@ -200,7 +194,7 @@
 				interrupts = <0x00 0x23 0x04>;
 				mboxes = <0x0a 0x00 0x0a 0x01>;
 				mbox-names = "tx", "rx";
-				phandle = <0x34>;
+				phandle = <0x33>;
 			};
 
 			soc-nvmem {
@@ -213,97 +207,97 @@
 
 					soc-revision@0 {
 						reg = <0x00 0x04>;
-						phandle = <0x35>;
+						phandle = <0x34>;
 					};
 
 					efuse-dna@c {
 						reg = <0x0c 0x0c>;
-						phandle = <0x36>;
+						phandle = <0x35>;
 					};
 
 					efuse-usr0@20 {
 						reg = <0x20 0x04>;
-						phandle = <0x37>;
+						phandle = <0x36>;
 					};
 
 					efuse-usr1@24 {
 						reg = <0x24 0x04>;
-						phandle = <0x38>;
+						phandle = <0x37>;
 					};
 
 					efuse-usr2@28 {
 						reg = <0x28 0x04>;
-						phandle = <0x39>;
+						phandle = <0x38>;
 					};
 
 					efuse-usr3@2c {
 						reg = <0x2c 0x04>;
-						phandle = <0x3a>;
+						phandle = <0x39>;
 					};
 
 					efuse-usr4@30 {
 						reg = <0x30 0x04>;
-						phandle = <0x3b>;
+						phandle = <0x3a>;
 					};
 
 					efuse-usr5@34 {
 						reg = <0x34 0x04>;
-						phandle = <0x3c>;
+						phandle = <0x3b>;
 					};
 
 					efuse-usr6@38 {
 						reg = <0x38 0x04>;
-						phandle = <0x3d>;
+						phandle = <0x3c>;
 					};
 
 					efuse-usr7@3c {
 						reg = <0x3c 0x04>;
-						phandle = <0x3e>;
+						phandle = <0x3d>;
 					};
 
 					efuse-miscusr@40 {
 						reg = <0x40 0x04>;
-						phandle = <0x3f>;
+						phandle = <0x3e>;
 					};
 
 					efuse-chash@50 {
 						reg = <0x50 0x04>;
-						phandle = <0x40>;
+						phandle = <0x3f>;
 					};
 
 					efuse-pufmisc@54 {
 						reg = <0x54 0x04>;
-						phandle = <0x41>;
+						phandle = <0x40>;
 					};
 
 					efuse-sec@58 {
 						reg = <0x58 0x04>;
-						phandle = <0x42>;
+						phandle = <0x41>;
 					};
 
 					efuse-spkid@5c {
 						reg = <0x5c 0x04>;
-						phandle = <0x43>;
+						phandle = <0x42>;
 					};
 
 					efuse-aeskey@60 {
 						reg = <0x60 0x20>;
-						phandle = <0x44>;
+						phandle = <0x43>;
 					};
 
 					efuse-ppk0hash@a0 {
 						reg = <0xa0 0x30>;
-						phandle = <0x45>;
+						phandle = <0x44>;
 					};
 
 					efuse-ppk1hash@d0 {
 						reg = <0xd0 0x30>;
-						phandle = <0x46>;
+						phandle = <0x45>;
 					};
 
 					efuse-pufuser@100 {
 						reg = <0x100 0x7f>;
-						phandle = <0x47>;
+						phandle = <0x46>;
 					};
 				};
 			};
@@ -322,7 +316,7 @@
 			pinctrl {
 				compatible = "xlnx,zynqmp-pinctrl";
 				status = "okay";
-				phandle = <0x48>;
+				phandle = <0x47>;
 
 				i2c1-default {
 					phandle = <0x18>;
@@ -589,14 +583,14 @@
 		#address-cells = <0x02>;
 		#size-cells = <0x02>;
 		ranges;
-		phandle = <0x49>;
+		phandle = <0x48>;
 	};
 
 	ams {
 		compatible = "iio-hwmon";
 		status = "disabled";
 		io-channels = <0x11 0x00 0x11 0x01 0x11 0x02 0x11 0x03 0x11 0x04 0x11 0x05 0x11 0x06 0x11 0x07 0x11 0x08 0x11 0x09 0x11 0x0a 0x11 0x0b 0x11 0x0c 0x11 0x0d 0x11 0x0e 0x11 0x0f 0x11 0x10 0x11 0x11 0x11 0x12 0x11 0x13 0x11 0x14 0x11 0x15 0x11 0x16 0x11 0x17 0x11 0x18 0x11 0x19 0x11 0x1a 0x11 0x1b 0x11 0x1c 0x11 0x1d>;
-		phandle = <0x4a>;
+		phandle = <0x49>;
 	};
 
 	thermal-sensor-apu {
@@ -643,7 +637,7 @@
 					temperature = <0x178f4>;
 					hysteresis = <0xdac>;
 					type = "critical";
-					phandle = <0x4b>;
+					phandle = <0x4a>;
 				};
 			};
 
@@ -691,7 +685,7 @@
 		#address-cells = <0x02>;
 		#size-cells = <0x02>;
 		ranges;
-		phandle = <0x4c>;
+		phandle = <0x4b>;
 
 		can@ff060000 {
 			compatible = "xlnx,zynq-can-1.0";
@@ -705,7 +699,7 @@
 			resets = <0x16 0x28>;
 			power-domains = <0x17 0x2f>;
 			clocks = <0x04 0x3f 0x04 0x1f>;
-			phandle = <0x4d>;
+			phandle = <0x4c>;
 		};
 
 		can@ff070000 {
@@ -720,7 +714,7 @@
 			resets = <0x16 0x29>;
 			power-domains = <0x17 0x30>;
 			clocks = <0x04 0x40 0x04 0x1f>;
-			phandle = <0x4e>;
+			phandle = <0x4d>;
 		};
 
 		cci@fd6e0000 {
@@ -730,7 +724,7 @@
 			ranges = <0x00 0x00 0xfd6e0000 0x10000>;
 			#address-cells = <0x01>;
 			#size-cells = <0x01>;
-			phandle = <0x4f>;
+			phandle = <0x4e>;
 
 			pmu@9000 {
 				compatible = "arm,cci-400-pmu,r1";
@@ -747,7 +741,7 @@
 			cpu = <0x06>;
 			status = "disabled";
 			clocks = <0x04 0x0c>;
-			phandle = <0x50>;
+			phandle = <0x4f>;
 		};
 
 		debug@fed10000 {
@@ -757,7 +751,7 @@
 			cpu = <0x07>;
 			status = "disabled";
 			clocks = <0x04 0x0c>;
-			phandle = <0x51>;
+			phandle = <0x50>;
 		};
 
 		debug@fee10000 {
@@ -767,7 +761,7 @@
 			cpu = <0x08>;
 			status = "disabled";
 			clocks = <0x04 0x0c>;
-			phandle = <0x52>;
+			phandle = <0x51>;
 		};
 
 		debug@fef10000 {
@@ -777,7 +771,7 @@
 			cpu = <0x09>;
 			status = "disabled";
 			clocks = <0x04 0x0c>;
-			phandle = <0x53>;
+			phandle = <0x52>;
 		};
 
 		dma-controller@fd500000 {
@@ -791,7 +785,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x54>;
+			phandle = <0x53>;
 		};
 
 		dma-controller@fd510000 {
@@ -805,7 +799,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x55>;
+			phandle = <0x54>;
 		};
 
 		dma-controller@fd520000 {
@@ -819,7 +813,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x56>;
+			phandle = <0x55>;
 		};
 
 		dma-controller@fd530000 {
@@ -833,7 +827,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x57>;
+			phandle = <0x56>;
 		};
 
 		dma-controller@fd540000 {
@@ -847,7 +841,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x58>;
+			phandle = <0x57>;
 		};
 
 		dma-controller@fd550000 {
@@ -861,7 +855,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x59>;
+			phandle = <0x58>;
 		};
 
 		dma-controller@fd560000 {
@@ -875,7 +869,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x5a>;
+			phandle = <0x59>;
 		};
 
 		dma-controller@fd570000 {
@@ -889,7 +883,7 @@
 			xlnx,bus-width = <0x80>;
 			power-domains = <0x17 0x2a>;
 			clocks = <0x04 0x13 0x04 0x1f>;
-			phandle = <0x5b>;
+			phandle = <0x5a>;
 		};
 
 		interrupt-controller@f9010000 {
@@ -912,7 +906,7 @@
 			clock-names = "bus", "core";
 			power-domains = <0x17 0x3a>;
 			clocks = <0x04 0x18 0x04 0x19>;
-			phandle = <0x5c>;
+			phandle = <0x5b>;
 		};
 
 		dma-controller@ffa80000 {
@@ -926,7 +920,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x5d>;
+			phandle = <0x5c>;
 		};
 
 		dma-controller@ffa90000 {
@@ -940,7 +934,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x5e>;
+			phandle = <0x5d>;
 		};
 
 		dma-controller@ffaa0000 {
@@ -954,7 +948,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x5f>;
+			phandle = <0x5e>;
 		};
 
 		dma-controller@ffab0000 {
@@ -968,7 +962,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x60>;
+			phandle = <0x5f>;
 		};
 
 		dma-controller@ffac0000 {
@@ -982,7 +976,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x61>;
+			phandle = <0x60>;
 		};
 
 		dma-controller@ffad0000 {
@@ -996,7 +990,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x62>;
+			phandle = <0x61>;
 		};
 
 		dma-controller@ffae0000 {
@@ -1010,7 +1004,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x63>;
+			phandle = <0x62>;
 		};
 
 		dma-controller@ffaf0000 {
@@ -1024,7 +1018,7 @@
 			xlnx,bus-width = <0x40>;
 			power-domains = <0x17 0x2b>;
 			clocks = <0x04 0x44 0x04 0x1f>;
-			phandle = <0x64>;
+			phandle = <0x63>;
 		};
 
 		memory-controller@fd070000 {
@@ -1032,7 +1026,7 @@
 			reg = <0x00 0xfd070000 0x00 0x30000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x70 0x04>;
-			phandle = <0x65>;
+			phandle = <0x64>;
 		};
 
 		nand-controller@ff100000 {
@@ -1046,7 +1040,7 @@
 			#size-cells = <0x00>;
 			power-domains = <0x17 0x2c>;
 			clocks = <0x04 0x3c 0x04 0x1f>;
-			phandle = <0x66>;
+			phandle = <0x65>;
 		};
 
 		ethernet@ff0b0000 {
@@ -1061,7 +1055,7 @@
 			reset-names = "gem0_rst";
 			clocks = <0x04 0x1f 0x04 0x68 0x04 0x2d 0x04 0x31 0x04 0x2c>;
 			assigned-clocks = <0x04 0x2c>;
-			phandle = <0x67>;
+			phandle = <0x66>;
 		};
 
 		ethernet@ff0c0000 {
@@ -1076,7 +1070,7 @@
 			reset-names = "gem1_rst";
 			clocks = <0x04 0x1f 0x04 0x69 0x04 0x2e 0x04 0x32 0x04 0x2c>;
 			assigned-clocks = <0x04 0x2c>;
-			phandle = <0x68>;
+			phandle = <0x67>;
 		};
 
 		ethernet@ff0d0000 {
@@ -1091,7 +1085,7 @@
 			reset-names = "gem2_rst";
 			clocks = <0x04 0x1f 0x04 0x6a 0x04 0x2f 0x04 0x33 0x04 0x2c>;
 			assigned-clocks = <0x04 0x2c>;
-			phandle = <0x69>;
+			phandle = <0x68>;
 		};
 
 		ethernet@ff0e0000 {
@@ -1106,7 +1100,7 @@
 			reset-names = "gem3_rst";
 			clocks = <0x04 0x1f 0x04 0x6b 0x04 0x30 0x04 0x34 0x04 0x2c>;
 			assigned-clocks = <0x04 0x2c>;
-			phandle = <0x6a>;
+			phandle = <0x69>;
 		};
 
 		gpio@ff0a0000 {
@@ -1136,7 +1130,7 @@
 			#size-cells = <0x00>;
 			power-domains = <0x17 0x25>;
 			clocks = <0x04 0x3d>;
-			phandle = <0x6b>;
+			phandle = <0x6a>;
 		};
 
 		i2c@ff030000 {
@@ -1155,7 +1149,7 @@
 			pinctrl-1 = <0x19>;
 			scl-gpios = <0x1a 0x04 0x06>;
 			sda-gpios = <0x1a 0x05 0x06>;
-			phandle = <0x6c>;
+			phandle = <0x6b>;
 
 			i2c-mux@75 {
 				compatible = "nxp,pca9548";
@@ -1168,7 +1162,7 @@
 					#size-cells = <0x00>;
 					reg = <0x00>;
 					label = "LS-I2C0";
-					phandle = <0x6d>;
+					phandle = <0x6c>;
 				};
 
 				i2c@1 {
@@ -1176,7 +1170,7 @@
 					#size-cells = <0x00>;
 					reg = <0x01>;
 					label = "LS-I2C1";
-					phandle = <0x6e>;
+					phandle = <0x6d>;
 				};
 
 				i2c@2 {
@@ -1184,7 +1178,7 @@
 					#size-cells = <0x00>;
 					reg = <0x02>;
 					label = "HS-I2C2";
-					phandle = <0x6f>;
+					phandle = <0x6e>;
 				};
 
 				i2c@3 {
@@ -1192,14 +1186,14 @@
 					#size-cells = <0x00>;
 					reg = <0x03>;
 					label = "HS-I2C3";
-					phandle = <0x70>;
+					phandle = <0x6f>;
 				};
 
 				i2c@4 {
 					#address-cells = <0x01>;
 					#size-cells = <0x00>;
 					reg = <0x04>;
-					phandle = <0x71>;
+					phandle = <0x70>;
 
 					pmic@5e {
 						compatible = "ti,tps65086";
@@ -1208,7 +1202,7 @@
 						interrupts = <0x4d 0x08>;
 						#gpio-cells = <0x02>;
 						gpio-controller;
-						phandle = <0x72>;
+						phandle = <0x71>;
 					};
 				};
 
@@ -1216,7 +1210,7 @@
 					#address-cells = <0x01>;
 					#size-cells = <0x00>;
 					reg = <0x05>;
-					phandle = <0x73>;
+					phandle = <0x72>;
 
 					ina226@40 {
 						compatible = "ti,ina226";
@@ -1231,14 +1225,14 @@
 					#address-cells = <0x01>;
 					#size-cells = <0x00>;
 					reg = <0x06>;
-					phandle = <0x74>;
+					phandle = <0x73>;
 				};
 
 				i2c@7 {
 					#address-cells = <0x01>;
 					#size-cells = <0x00>;
 					reg = <0x07>;
-					phandle = <0x75>;
+					phandle = <0x74>;
 				};
 			};
 		};
@@ -1248,7 +1242,7 @@
 			reg = <0x00 0xff960000 0x00 0x1000>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x0a 0x04>;
-			phandle = <0x76>;
+			phandle = <0x75>;
 		};
 
 		perf-monitor@ffa00000 {
@@ -1268,7 +1262,7 @@
 			xlnx,global-count-width = <0x20>;
 			xlnx,metric-count-scale = <0x01>;
 			clocks = <0x04 0x1f>;
-			phandle = <0x77>;
+			phandle = <0x76>;
 		};
 
 		perf-monitor@fd0b0000 {
@@ -1288,7 +1282,7 @@
 			xlnx,global-count-width = <0x20>;
 			xlnx,metric-count-scale = <0x01>;
 			clocks = <0x04 0x1c>;
-			phandle = <0x78>;
+			phandle = <0x77>;
 		};
 
 		perf-monitor@fd490000 {
@@ -1308,7 +1302,7 @@
 			xlnx,global-count-width = <0x20>;
 			xlnx,metric-count-scale = <0x01>;
 			clocks = <0x04 0x1c>;
-			phandle = <0x79>;
+			phandle = <0x78>;
 		};
 
 		perf-monitor@ffa10000 {
@@ -1328,7 +1322,7 @@
 			xlnx,global-count-width = <0x20>;
 			xlnx,metric-count-scale = <0x01>;
 			clocks = <0x04 0x1f>;
-			phandle = <0x7a>;
+			phandle = <0x79>;
 		};
 
 		pcie@fd0e0000 {
@@ -1374,7 +1368,7 @@
 			#size-cells = <0x00>;
 			power-domains = <0x17 0x2d>;
 			clocks = <0x04 0x35 0x04 0x1f>;
-			phandle = <0x7b>;
+			phandle = <0x7a>;
 		};
 
 		phy@fd400000 {
@@ -1396,7 +1390,7 @@
 			interrupts = <0x00 0x1a 0x04 0x00 0x1b 0x04>;
 			interrupt-names = "alarm", "sec";
 			calibration = <0x7fff>;
-			phandle = <0x7c>;
+			phandle = <0x7b>;
 		};
 
 		ahci@fd0c0000 {
@@ -1408,7 +1402,7 @@
 			power-domains = <0x17 0x1c>;
 			resets = <0x16 0x10>;
 			clocks = <0x04 0x16>;
-			phandle = <0x7d>;
+			phandle = <0x7c>;
 		};
 
 		mmc@ff160000 {
@@ -1430,7 +1424,7 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <0x1f>;
 			xlnx,mio-bank = <0x00>;
-			phandle = <0x7e>;
+			phandle = <0x7d>;
 		};
 
 		mmc@ff170000 {
@@ -1460,14 +1454,14 @@
 			vqmmc-supply = <0x22>;
 			#address-cells = <0x01>;
 			#size-cells = <0x00>;
-			phandle = <0x7f>;
+			phandle = <0x7e>;
 
 			wifi@2 {
 				compatible = "ti,wl1831";
 				reg = <0x02>;
 				interrupt-parent = <0x1a>;
 				interrupts = <0x4c 0x01>;
-				phandle = <0x80>;
+				phandle = <0x7f>;
 			};
 		};
 
@@ -1479,7 +1473,7 @@
 			#global-interrupts = <0x01>;
 			interrupt-parent = <0x05>;
 			interrupts = <0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04 0x00 0x9b 0x04>;
-			phandle = <0x81>;
+			phandle = <0x80>;
 		};
 
 		spi@ff040000 {
@@ -1497,7 +1491,7 @@
 			num-cs = <0x01>;
 			pinctrl-names = "default";
 			pinctrl-0 = <0x23>;
-			phandle = <0x82>;
+			phandle = <0x81>;
 		};
 
 		spi@ff050000 {
@@ -1515,7 +1509,7 @@
 			num-cs = <0x01>;
 			pinctrl-names = "default";
 			pinctrl-0 = <0x24>;
-			phandle = <0x83>;
+			phandle = <0x82>;
 		};
 
 		timer@ff110000 {
@@ -1527,7 +1521,7 @@
 			timer-width = <0x20>;
 			power-domains = <0x17 0x18>;
 			clocks = <0x04 0x1f>;
-			phandle = <0x84>;
+			phandle = <0x83>;
 		};
 
 		timer@ff120000 {
@@ -1539,7 +1533,7 @@
 			timer-width = <0x20>;
 			power-domains = <0x17 0x19>;
 			clocks = <0x04 0x1f>;
-			phandle = <0x85>;
+			phandle = <0x84>;
 		};
 
 		timer@ff130000 {
@@ -1551,7 +1545,7 @@
 			timer-width = <0x20>;
 			power-domains = <0x17 0x1a>;
 			clocks = <0x04 0x1f>;
-			phandle = <0x86>;
+			phandle = <0x85>;
 		};
 
 		timer@ff140000 {
@@ -1563,7 +1557,7 @@
 			timer-width = <0x20>;
 			power-domains = <0x17 0x1b>;
 			clocks = <0x04 0x1f>;
-			phandle = <0x87>;
+			phandle = <0x86>;
 		};
 
 		serial@ff000000 {
@@ -1580,7 +1574,7 @@
 			assigned-clocks = <0x04 0x38>;
 			pinctrl-names = "default";
 			pinctrl-0 = <0x25>;
-			phandle = <0x88>;
+			phandle = <0x87>;
 
 			bluetooth {
 				compatible = "ti,wl1831-st";
@@ -1602,7 +1596,7 @@
 			assigned-clocks = <0x04 0x39>;
 			pinctrl-names = "default";
 			pinctrl-0 = <0x26>;
-			phandle = <0x89>;
+			phandle = <0x88>;
 		};
 
 		usb@ff9d0000 {
@@ -1622,7 +1616,7 @@
 			pinctrl-0 = <0x27>;
 			phy-names = "usb3-phy";
 			phys = <0x28 0x02 0x04 0x00 0x00>;
-			phandle = <0x8a>;
+			phandle = <0x89>;
 
 			usb@fe200000 {
 				compatible = "snps,dwc3";
@@ -1637,7 +1631,7 @@
 				clocks = <0x04 0x22>;
 				dr_mode = "peripheral";
 				maximum-speed = "super-speed";
-				phandle = <0x8b>;
+				phandle = <0x8a>;
 			};
 		};
 
@@ -1659,7 +1653,7 @@
 			phy-names = "usb3-phy";
 			phys = <0x28 0x03 0x04 0x01 0x00>;
 			reset-gpios = <0x2a 0x01 0x01>;
-			phandle = <0x8c>;
+			phandle = <0x8b>;
 
 			usb@fe300000 {
 				compatible = "snps,dwc3";
@@ -1674,7 +1668,7 @@
 				clocks = <0x04 0x22>;
 				dr_mode = "host";
 				maximum-speed = "super-speed";
-				phandle = <0x8d>;
+				phandle = <0x8c>;
 			};
 		};
 
@@ -1687,7 +1681,7 @@
 			timeout-sec = <0x3c>;
 			reset-on-timeout;
 			clocks = <0x04 0x4b>;
-			phandle = <0x8e>;
+			phandle = <0x8d>;
 		};
 
 		watchdog@ff150000 {
@@ -1698,7 +1692,7 @@
 			reg = <0x00 0xff150000 0x00 0x1000>;
 			timeout-sec = <0x0a>;
 			clocks = <0x04 0x70>;
-			phandle = <0x8f>;
+			phandle = <0x8e>;
 		};
 
 		ams@ffa50000 {
@@ -1717,14 +1711,14 @@
 				compatible = "xlnx,zynqmp-ams-ps";
 				status = "okay";
 				reg = <0x00 0x400>;
-				phandle = <0x90>;
+				phandle = <0x8f>;
 			};
 
 			ams-pl@400 {
 				compatible = "xlnx,zynqmp-ams-pl";
 				status = "disabled";
 				reg = <0x400 0x400>;
-				phandle = <0x91>;
+				phandle = <0x90>;
 			};
 		};
 
@@ -1759,7 +1753,7 @@
 			assigned-clocks = <0x04 0x12 0x04 0x11 0x04 0x10>;
 			phy-names = "dp-phy0", "dp-phy1";
 			phys = <0x28 0x01 0x06 0x00 0x01 0x28 0x00 0x06 0x01 0x01>;
-			phandle = <0x92>;
+			phandle = <0x91>;
 
 			ports {
 				#address-cells = <0x01>;
@@ -1767,32 +1761,32 @@
 
 				port@0 {
 					reg = <0x00>;
-					phandle = <0x93>;
+					phandle = <0x92>;
 				};
 
 				port@1 {
 					reg = <0x01>;
-					phandle = <0x94>;
+					phandle = <0x93>;
 				};
 
 				port@2 {
 					reg = <0x02>;
-					phandle = <0x95>;
+					phandle = <0x94>;
 				};
 
 				port@3 {
 					reg = <0x03>;
-					phandle = <0x96>;
+					phandle = <0x95>;
 				};
 
 				port@4 {
 					reg = <0x04>;
-					phandle = <0x97>;
+					phandle = <0x96>;
 				};
 
 				port@5 {
 					reg = <0x05>;
-					phandle = <0x98>;
+					phandle = <0x97>;
 
 					endpoint {
 						remote-endpoint = <0x2c>;
@@ -1981,7 +1975,7 @@
 		#size-cells = <0x02>;
 		compatible = "simple-bus";
 		ranges;
-		phandle = <0x99>;
+		phandle = <0x98>;
 	};
 
 	__symbols__ {
@@ -1997,7 +1991,6 @@
 		zynqmp_ipi = "/zynqmp-ipi";
 		ipi_mailbox_pmu1 = "/zynqmp-ipi/mailbox@ff9905c0";
 		dcc = "/dcc";
-		optee = "/firmware/optee";
 		zynqmp_firmware = "/firmware/zynqmp-firmware";
 		zynqmp_power = "/firmware/zynqmp-firmware/power-management";
 		soc_revision = "/firmware/zynqmp-firmware/soc-nvmem/nvmem-layout/soc-revision@0";
