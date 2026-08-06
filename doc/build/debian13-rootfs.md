@@ -2,7 +2,7 @@
 
 #### Prepare Linux Kernel Image Debian Package
 
-[./doc/build/linux-kernel-6.12.60-zynqmp-fpga-generic.md](linux-kernel-6.12.60-zynqmp-fpga-generic.md)
+[./doc/build/linux-kernel-6.12.100-zynqmp-fpga-generic.md](linux-kernel-6.12.100-zynqmp-fpga-generic.md)
 
 #### Prepare the necessary packages
 
@@ -213,14 +213,14 @@ debian11-rootfs# mkdir /lib/firmware/ti-connectivity
 Note: If the version of wl18xx-fw-4.bin is 8.9.1.0.0 or later, it will not work, so use 8.9.0.0.90.
 
 ```console
-debian13-rootfs# git clone git://git.ti.com/wilink8-wlan/wl18xx_fw.git
+debian13-rootfs# git clone https://git.ti.com/git/wilink8-wlan/wl18xx_fw.git
 debian13-rootfs# cd wl18xx_fw && git checkout d2588c16809ecca8e0dc7ea011fc6180c7b08a92 && cd ..
 debian13-rootfs# cp wl18xx_fw/wl18xx-fw-4.bin /lib/firmware/ti-connectivity
 debian13-rootfs# rm -rf wl18xx_fw/
 ```
 
 ```console
-debian13-rootfs# git clone git://git.ti.com/wilink8-bt/ti-bt-firmware
+debian13-rootfs# git clone https://git.ti.com/git/wilink8-bt/ti-bt-firmware
 debian13-rootfs# cp ti-bt-firmware/TIInit_11.8.32.bts /lib/firmware/ti-connectivity
 debian13-rootfs# rm -rf ti-bt-firmware
 ```
