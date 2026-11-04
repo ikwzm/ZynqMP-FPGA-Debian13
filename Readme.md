@@ -27,8 +27,8 @@ This Repository provides a Linux Boot Image(U-boot, Kernel, Debian 13 RootFS) fo
   + PMU Firmware(Platform Management Unit Firmware)
   + BL31(ARM Trusted Firmware Boot Loader stage 3-1)
   + U-Boot xilinx-v2019.2 (customized)
-* [Linux Kernel Version 6.12.100-zynqmp-fpga-generic](https://github.com/ikwzm/ZynqMP-FPGA-Linux-Kernel-6.12/tree/6.12.100-zynqmp-fpga-generic-2)
-  + [linux-stable 6.12.60](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git//tag/?h=v6.12.100)
+* [Linux Kernel Version 6.12.114-zynqmp-fpga-generic](https://github.com/ikwzm/ZynqMP-FPGA-Linux-Kernel-6.12/tree/6.12.114-zynqmp-fpga-generic-1)
+  + [linux-stable 6.12.114](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git//tag/?h=v6.12.114)
   + Patched equivalent to linux-xlnx v2025.1
   + Enable Device Tree Overlay with Configuration File System
   + Enable FPGA Manager
@@ -54,6 +54,7 @@ For Linux Kernel and Debian11 RootFS, please refer to the respective release tag
 
 | Release  | Released  | Debian Version | Linux Kernel Version           | Release Tag |
 |:---------|:----------|:---------------|:-------------------------------|:------------|
+| v7.0.0   | 2026-11-4 | Debian 13.7    | 6.12.114-zynqmp-fpga-generic-1 | [v7.0.0](https://github.com/ikwzm/ZynqMP-FPGA-Debian13/tree/v7.0.0)
 | v6.0.0   | 2026-8-6  | Debian 13.6    | 6.12.100-zynqmp-fpga-generic-1 | [v6.0.0](https://github.com/ikwzm/ZynqMP-FPGA-Debian13/tree/v6.0.0)
 | v3.1.0   | 2026-2-14 | Debian 13.3    | 6.12.60-zynqmp-fpga-generic-2  | [v3.1.0](https://github.com/ikwzm/ZynqMP-FPGA-Debian13/tree/v3.1.0)
 | v1.0.0   | 2025-9-10 | Debian 13.1    | 6.12.45-zynqmp-fpga-generic-1  | [v1.0.0](https://github.com/ikwzm/ZynqMP-FPGA-Debian13/tree/v1.0.0)
@@ -74,7 +75,7 @@ Build
 
 * [Build Boot Loader for Ultra96](doc/build/boot-ultra96.md)
 * [Build Boot Loader for Ultra96-V2](doc/build/boot-ultra96v2.md)
-* [Build Linux Kernel](doc/build/linux-kernel-6.12.100-zynqmp-fpga-generic.md)
+* [Build Linux Kernel](doc/build/linux-kernel-6.12.114-zynqmp-fpga-generic.md)
 * [Build Debian13 RootFS](doc/build/debian13-rootfs.md)
 
 
@@ -100,3 +101,5 @@ Examples
   + Pmod-gpio(with emio) Example for Kv260
 * https://github.com/ikwzm/ZynqMP-FPGA-Linux-Example-2-Ultra96
   + ZynqMP-FPGA-Linux Example (2) binary and test code for Ultra96
+* https://github.com/ikwzm/ZynqMP-FPGA-Linux-Example-4-Kv260
+  + ZynqMP-FPGA-Linux Example (4) binary and test code for Kv260
