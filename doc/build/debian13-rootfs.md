@@ -2,7 +2,7 @@
 
 #### Prepare Linux Kernel Image Debian Package
 
-[./doc/build/linux-kernel-6.12.100-zynqmp-fpga-generic.md](linux-kernel-6.12.100-zynqmp-fpga-generic.md)
+[./doc/build/linux-kernel-6.12.114-zynqmp-fpga-generic.md](linux-kernel-6.12.114-zynqmp-fpga-generic.md)
 
 #### Prepare the necessary packages
 
@@ -267,6 +267,7 @@ debian13-rootfs# dpkg -l > dpkg-list.txt
 debian13-rootfs# exit
 shell$ sudo rm -f $PWD/$targetdir/build-debian13-rootfs-second.sh
 shell$ sudo rm -f $PWD/$targetdir/linux-image-*.deb
+shell$ sudo sh -c "echo '' > $PWD/$targetdir/etc/resolv.conf"
 shell$ sudo mv    $PWD/$targetdir/dpkg-list.txt files/debian13-dpkg-list.txt
 ```
 
