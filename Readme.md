@@ -39,10 +39,53 @@ This Repository provides a Linux Boot Image(U-boot, Kernel, Debian 13 RootFS) fo
   + Installed build-essential
   + Installed device-tree-compiler
   + Installed ruby ruby-msgpack ruby-serialport
-  + Installed python python3 python3-numpy msgpack-rpc-python
+  + Installed python3 python3-numpy msgpack-rpc-python
   + Installed u-boot-tools
   + Installed Other package list -> [files/debian13-dpkg-list.txt](files/debian13-dpkg-list.txt)
 * FPGA Device Drivers and Services
   + [fclkcfg    (FPGA Clock Configuration Device Driver)](https://github.com/ikwzm/fclkcfg)
   + [u-dma-buf  (User space mappable DMA Buffer)](https://github.com/ikwzm/udmabuf)
 
+Install
+------------------------------------------------------------------------------------
+
+* Install Boot Loader and Linux to SD-Card
+  + [Ultra96](doc/install/ultra96.md)
+  + [Ultra96-V2](doc/install/ultra96v2.md)
+  + [KV260](doc/install/kv260.md)
+  + [KR260](doc/install/kr260.md)
+
+
+Build 
+------------------------------------------------------------------------------------
+
+* [Build Boot Loader for Ultra96](doc/build/boot-ultra96.md)
+* [Build Boot Loader for Ultra96-V2](doc/build/boot-ultra96v2.md)
+* [Build Linux Kernel](doc/build/linux-kernel-6.12.114-zynqmp-fpga-generic.md)
+* [Build Debian13 RootFS](doc/build/debian13-rootfs.md)
+
+
+Other Projects
+------------------------------------------------------------------------------------
+
+* https://github.com/ikwzm/ZynqMP-FPGA-Linux-Kernel-6.12
+  + Linux Kernel (v6.12.x) Image and Device Trees for Zynq MPSoC.
+* https://github.com/ikwzm/ZynqMP-U-Boot-Ultra96
+  + Boot Loader(U-Boot, FSBL, PMUFW,ATF) for Ultra96
+* https://github.com/ikwzm/ZynqMP-U-Boot-Ultra96-V2
+  + Boot Loader(U-Boot, FSBL, PMUFW,ATF) for Ultra96-V2
+
+
+Examples
+------------------------------------------------------------------------------------
+
+* https://github.com/ikwzm/ArgSort-Kv260
+  + ArgSort for Kv260
+* https://github.com/ikwzm/ArgSort-Ultra96
+  + ArgSort for Ultra96/Ultra96-V2
+* https://github.com/ikwzm/Kv260-Pmod-gpio-emio
+  + Pmod-gpio(with emio) Example for Kv260
+* https://github.com/ikwzm/ZynqMP-FPGA-Linux-Example-2-Ultra96
+  + ZynqMP-FPGA-Linux Example (2) binary and test code for Ultra96
+* https://github.com/ikwzm/ZynqMP-FPGA-Linux-Example-4-Kv260
+  + ZynqMP-FPGA-Linux Example (4) binary and test code for Kv260
